@@ -1,0 +1,23 @@
+ion-grid {
+  ion-row{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-img {
+      width: min(50%, 250px);
+      text-align: center;
+      aspect-ratio: 1;
+      background-size: cover;
+
+      &::part(image) {
+        border-radius: 50%;
+      }
+    }
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
