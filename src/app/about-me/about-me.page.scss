@@ -19,5 +19,18 @@ ion-grid {
     h1 {
       text-align: center;
     }
+
+    ion-accordion-group {
+      width: 100%;
+
+      ion-accordion {
+        &:nth-child(1) {
+          border-radius: 16px 16px 0 0;
+        }
+        &:nth-last-child(1) {
+          border-radius: 0 0 16px 16px;
+        }
+      }
+    }
   }
 }
