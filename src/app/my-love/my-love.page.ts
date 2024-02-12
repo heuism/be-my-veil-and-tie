@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import party from "party-js";
+import { TabsService } from '../tabs/tabs-service/tabs-service.service';
 
 @Component({
   selector: 'app-my-love',
@@ -17,7 +18,7 @@ export class MyLovePage {
 
   currentGif = 'assets/images/hien-action.gif';
   title = 'Be my Veil and Tie';
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private tabsSvc: TabsService) {
     this.yesButtonHeight = this.yesHeight + "px";
     this.tryMeButtonHeight = this.tryMeHeight + "px";
   }
@@ -48,6 +49,7 @@ export class MyLovePage {
         this.title = "Fantastic baby 👶"
         this.yesClicked  = true;
         this.showConfetti();
+        this.tabsSvc.toggleTabVisibility(true);
         return;
     }
   }
