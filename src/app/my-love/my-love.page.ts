@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IonButton } from '@ionic/angular';
-import { IonButtonCustomEvent } from '@ionic/core';
+import party from "party-js";
 
 @Component({
   selector: 'app-my-love',
@@ -16,9 +15,22 @@ export class MyLovePage {
 
   currentGif = 'assets/images/hien-action.gif';
   title = 'Be my Veil and Tie';
-  constructor() {
+  constructor(private elementRef: ElementRef) {
     this.yesButtonHeight = this.yesHeight + "px";
     this.tryMeButtonHeight = this.tryMeHeight + "px";
+  }
+
+  showConfetti(){
+    party.confetti(this.elementRef.nativeElement, {
+      // Specify further (optional) configuration here.
+      count: party.variation.range(0, 100),
+      size: party.variation.range(0.6, 1.4),
+    });
+    party.sparkles(this.elementRef.nativeElement, {
+      // Specify further (optional) configuration here.
+      count: party.variation.range(10, 60),
+      speed: party.variation.range(50, 300),
+    });
   }
 
   buttonClicked(event: Event) {
@@ -32,6 +44,7 @@ export class MyLovePage {
       case (event.target as HTMLElement).classList.contains('yes'):
         this.currentGif = 'assets/images/of-course.gif';
         this.title = "Fantastic baby 👶"
+        this.showConfetti();
         return;
     }
   }
