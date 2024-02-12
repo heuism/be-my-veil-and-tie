@@ -1,0 +1,37 @@
+ion-content{
+  ion-grid {
+    ion-row{
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ion-img {
+        width: min(50%, 250px);
+        text-align: center;
+        aspect-ratio: 3/4;
+        background-size: auto;
+
+        &::part(image) {
+          border-radius: 16px;
+        }
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ion-button {
+        width: 100%;
+        &.yes {
+          --background: lightgreen;
+          max-height: 75svh;
+        }
+
+        &.try-me {
+          --background: lightcoral;
+        }
+      }
+    }
+  }
+}
