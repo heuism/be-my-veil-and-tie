@@ -4,19 +4,29 @@
       <ion-img class="profile" [src]="currentGif" alt="Hien's gift"></ion-img>
     </ion-row>
     <ion-row>
-      <h1>
-        {{title}}
-      </h1>
+      <h1>{{title}}</h1>
     </ion-row>
-    <ion-row>
-      <ion-button #yesBtn class="yes" [style.height]="yesButtonHeight" (click)="buttonClicked($event)">
-        YES!!!
-      </ion-button>
-    </ion-row>
-    <ion-row>
-      <ion-button #tryMeBtn class="try-me" [style.height]="tryMeButtonHeight" (click)="buttonClicked($event)">
-        Try me!!!
-      </ion-button>
-    </ion-row>
+    <ng-container *ngIf="!yesClicked">
+      <ion-row>
+        <ion-button
+          #yesBtn
+          class="yes"
+          [style.height]="yesButtonHeight"
+          (click)="buttonClicked($event)"
+        >
+          YES!!!
+        </ion-button>
+      </ion-row>
+      <ion-row>
+        <ion-button
+          #tryMeBtn
+          class="try-me"
+          [style.height]="tryMeButtonHeight"
+          (click)="buttonClicked($event)"
+        >
+          Try me!!!
+        </ion-button>
+      </ion-row>
+    </ng-container>
   </ion-grid>
 </ion-content>

@@ -13,6 +13,8 @@ export class MyLovePage {
   yesHeight = 100;
   yesButtonHeight = "";
 
+  yesClicked = false;
+
   currentGif = 'assets/images/hien-action.gif';
   title = 'Be my Veil and Tie';
   constructor(private elementRef: ElementRef) {
@@ -44,6 +46,7 @@ export class MyLovePage {
       case (event.target as HTMLElement).classList.contains('yes'):
         this.currentGif = 'assets/images/of-course.gif';
         this.title = "Fantastic baby 👶"
+        this.yesClicked  = true;
         this.showConfetti();
         return;
     }
