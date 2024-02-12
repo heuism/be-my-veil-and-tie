@@ -14,7 +14,7 @@
           [style.height]="yesButtonHeight"
           (click)="buttonClicked($event)"
         >
-          YES!!!
+          {{yesButtonTitle}}
         </ion-button>
       </ion-row>
       <ion-row>
@@ -24,7 +24,7 @@
           [style.height]="tryMeButtonHeight"
           (click)="buttonClicked($event)"
         >
-          Try me!!!
+          {{noButtonTitle}}
         </ion-button>
       </ion-row>
     </ng-container>
