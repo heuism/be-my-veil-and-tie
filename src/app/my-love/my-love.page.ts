@@ -13,6 +13,9 @@ export class MyLovePage {
 
   yesHeight = 100;
   yesButtonHeight = "";
+
+  currentGif = 'assets/images/hien-action.gif';
+  title = 'Be my Veil and Tie';
   constructor() {
     this.yesButtonHeight = this.yesHeight + "px";
     this.tryMeButtonHeight = this.tryMeHeight + "px";
@@ -21,12 +24,15 @@ export class MyLovePage {
   buttonClicked(event: Event) {
     switch(true) {
       case (event.target as HTMLElement).classList.contains('try-me'):
-        console.log(this.tryMeButtonHeight);
         this.tryMeHeight /= 1.5;
         this.tryMeButtonHeight = this.tryMeHeight + "px";
         this.yesHeight *= 1.5;
         this.yesButtonHeight = this.yesHeight + "px";
-        return
+        return;
+      case (event.target as HTMLElement).classList.contains('yes'):
+        this.currentGif = 'assets/images/of-course.gif';
+        this.title = "Fantastic baby 👶"
+        return;
     }
   }
 
